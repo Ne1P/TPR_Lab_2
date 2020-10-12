@@ -37,8 +37,8 @@ namespace Lab_2
             data[] elements = new data[]{
                 new data(){variant="A",factoryWorth=750, income=270,loss=-70,incomeProbability=0.8,lossProbability=0.2, years=5},
                 new data(){variant="B",factoryWorth=250, income=170,loss=-50,incomeProbability=0.8,lossProbability=0.2, years=5},
-                new data(){variant="CA",factoryWorth=750, income=270,loss=-70,incomeProbability=0.9,lossProbability=0.1, years=5},
-                new data(){variant="CB",factoryWorth=250, income=170,loss=-50,incomeProbability=0.7,lossProbability=0.3, years=5}
+                new data(){variant="CA",factoryWorth=750, income=270,loss=-70,incomeProbability=0.9,lossProbability=0.1, years=4},
+                new data(){variant="CB",factoryWorth=250, income=170,loss=-50,incomeProbability=0.9,lossProbability=0.1, years=4}
             };
 
             string path = @"C:\Users\Petro\Desktop\Algoritm\TPR\Lab_2\Lab_2\elements.dat";
@@ -46,20 +46,20 @@ namespace Lab_2
             try
             {
                 // створення бінарного файлу
-                //using (BinaryWriter writer = new BinaryWriter(File.Open(path, FileMode.OpenOrCreate)))
-                //{
-                //    // записуєм у файл кожне поле структури
-                //    foreach (data e in elements)
-                //    {
-                //        writer.Write(e.variant);
-                //        writer.Write(e.factoryWorth);
-                //        writer.Write(e.income);
-                //        writer.Write(e.loss);
-                //        writer.Write(e.incomeProbability);
-                //        writer.Write(e.lossProbability);
-                //        writer.Write(e.years);
-                //    }
-                //}
+                using (BinaryWriter writer = new BinaryWriter(File.Open(path, FileMode.OpenOrCreate)))
+                {
+                    // записуєм у файл кожне поле структури
+                    foreach (data e in elements)
+                    {
+                        writer.Write(e.variant);
+                        writer.Write(e.factoryWorth);
+                        writer.Write(e.income);
+                        writer.Write(e.loss);
+                        writer.Write(e.incomeProbability);
+                        writer.Write(e.lossProbability);
+                        writer.Write(e.years);
+                    }
+                }
                 // створення бінарного файлу
                 using (BinaryReader reader = new BinaryReader(File.Open(path, FileMode.Open)))
                 {
